@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#8fd3f4" />
+  <title>繁忙的动物世界 · 双语认知大发现</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦁</text></svg>" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <!-- loading / start screen -->
+  <div id="loader">
+    <div class="loader-inner">
+      <h1 class="puffy" id="title"></h1>
+      <p class="subtitle">走进黏土世界 · 认识 10 位动物朋友 · 听听它们的名字和叫声</p>
+      <div class="bar"><div class="bar-fill" id="barfill"></div></div>
+      <div class="bar-text" id="bartext">正在捏黏土…</div>
+      <button id="start" class="big-btn" disabled>开始探险 ▶</button>
+      <div class="hints">
+        <span>🖱️ 拖动旋转 · 滚轮缩放</span><span>⌨️ WASD / 方向键 行走</span><span>👆 点击地面前往 · 点击动物听声音</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HUD -->
+  <div id="hud" hidden>
+    <div class="top-left">
+      <div class="chip title-chip puffy-small" id="titlechip"></div>
+    </div>
+    <div class="top-right">
+      <div class="book" id="book">
+        <div class="book-title">探险手册 <span id="bookcount">0/10</span></div>
+        <div class="stickers" id="stickers"></div>
+      </div>
+    </div>
+    <div class="bottom-right">
+      <button class="round-btn" id="btn-tour" title="自动导览">🤖</button>
+      <button class="round-btn" id="btn-view" title="俯瞰全景 (M)">🗺️</button>
+      <button class="round-btn" id="btn-labels" title="显示/隐藏标签 (L)">🏷️</button>
+      <button class="round-btn" id="btn-sound" title="声音">🔊</button>
+      <button class="round-btn" id="btn-help" title="帮助">❓</button>
+    </div>
+    <div class="joystick" id="joy" hidden><div class="joy-base"><div class="joy-knob" id="joyknob"></div></div></div>
+    <div class="card" id="card" hidden>
+      <div class="card-arrow"></div>
+      <div class="card-cn" id="card-cn"></div>
+      <div class="card-py" id="card-py"></div>
+      <div class="card-en" id="card-en"></div>
+      <div class="card-btns">
+        <button id="say-en">🔊 English</button>
+        <button id="say-cn">🔊 中文</button>
+        <button id="say-sound">🐾 叫声</button>
+      </div>
+    </div>
+    <div class="toast" id="toast" hidden></div>
+    <div class="tour-banner" id="tourbanner" hidden>🤖 自动导览中 · 点击任意处停止</div>
+  </div>
+
+  <div id="help" hidden>
+    <div class="help-box">
+      <h2>怎么玩</h2>
+      <ul>
+        <li>🚶 <b>W A S D</b> 或方向键行走，<b>Shift</b> 加速</li>
+        <li>👆 点击地面 → 小探险家自动走过去（会绕开河流，从小桥过河）</li>
+        <li>🖱️ 按住拖动旋转视角，滚轮 / 双指缩放</li>
+        <li>🦁 点击动物或物品 → 听英文、叫声和中文；集齐 10 位动物朋友</li>
+        <li>🤖 点击机器人向导或右下角按钮 → 自动导览整条探险路线</li>
+        <li>🗺️ 按 <b>M</b> 或按钮 → 俯瞰整个黏土世界</li>
+        <li>🏷️ 按 <b>L</b> 或按钮 → 隐藏 / 显示头顶的双语标签（隐藏时鼠标悬停仍会显示）</li>
+      </ul>
+      <button id="help-close" class="big-btn">知道啦</button>
+    </div>
+  </div>
+
+  <div id="celebrate" hidden>
+    <div class="celebrate-box">
+      <div class="puffy" id="celebrate-title"></div>
+      <p>你认识了全部 10 位动物朋友！<br/>You found all 10 animal friends!</p>
+      <button id="celebrate-close" class="big-btn">继续玩 🎉</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

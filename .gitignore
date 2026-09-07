@@ -1,0 +1,64 @@
+# Dependencies and generated output
+node_modules/
+dist/
+.vite/
+coverage/
+*.tsbuildinfo
+
+# Local screenshots and temporary work (README images stay in docs/images/)
+/shots/
+/work/
+/tmp/
+/temp/
+*.log
+
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+!.env.*.sample
+.npmrc
+.netrc
+.aws/
+.ssh/
+secrets/
+credentials/
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+credentials.json
+service-account*.json
+service_account*.json
+*-firebase-adminsdk-*.json
+
+# Local editor, agent, and deployment state
+.claude/
+.codex/
+.cursor/
+.idea/
+.vscode/
+.vercel/
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+# OS files, Python caches, and Blender backups
+.DS_Store
+._*
+Thumbs.db
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.blend1
+*.blend2
+*.swp
+*.swo
+*~

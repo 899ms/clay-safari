@@ -1,0 +1,15 @@
+{
+  "name": "clay-safari",
+  "compatibility_date": "2026-09-07",
+  "assets": {
+    "directory": "./dist"
+  },
+  "workers_dev": true,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "clay-safari.lanshuagent.com",
+      "custom_domain": true
+    }
+  ]
+}

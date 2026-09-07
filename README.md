@@ -6,6 +6,8 @@
 
 A claymation-style 3D bilingual (中文 / English) animal world for kids, built with Blender-scripted models and Three.js.
 
+**[🌍 在线体验 · Play now](https://clay-safari.lanshuagent.com/)**
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-f7c948.svg?style=flat-square)](LICENSE)
 [![Three.js](https://img.shields.io/badge/Three.js-r185-000000.svg?style=flat-square&logo=three.js&logoColor=white)](https://threejs.org/)
 [![Vite](https://img.shields.io/badge/Vite-8-646CFF.svg?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -60,6 +62,19 @@ npm run preview      # 预览打包结果 http://localhost:5291
 # 需要 Blender 5.x；BLENDER 可指向任意 Blender 可执行文件
 BLENDER=/Applications/Blender.app/Contents/MacOS/Blender npm run models
 ```
+
+## ☁️ 部署到 Cloudflare
+
+在线地址：**https://clay-safari.lanshuagent.com/**
+
+项目使用 Cloudflare Workers Static Assets 托管 `dist/`。部署配置保存在 `wrangler.jsonc`，无需配置应用 API 密钥。
+
+```bash
+npx wrangler@4.114.0 login   # 首次部署时登录 Cloudflare
+npm run deploy             # 构建并部署
+```
+
+Fork 后请先修改 `wrangler.jsonc` 中的 Worker 名称和自定义域名，使用自己 Cloudflare 账号下的域名；也可以移除 `routes`，仅使用 `workers.dev` 地址。
 
 ## 🎮 操作
 
